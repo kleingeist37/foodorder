@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: lightblue;
+    min-height: 35px;
+}
+
+nav ul {
+    display: inline; 
+    list-style-type: none;
+}
+
+nav div {
+    cursor: pointer;
+    font-size: large;
+}
+
+.active {
+    background-color: yellow;
+    font-weight: bold;
+}

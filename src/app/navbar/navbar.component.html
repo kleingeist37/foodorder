@@ -1,0 +1,9 @@
+<nav>   
+    <div 
+    *ngFor="let element of elements"
+    (click)="openLink(element.route, element.params)"
+    routerLinkActive="active"
+    >
+    {{element.displayname}}
+    </div>
+</nav>

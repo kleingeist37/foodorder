@@ -1,0 +1,26 @@
+mat-card {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+mat-card-subtitle {
+    font-size: 12px;
+}
+
+mat-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+mat-chip {
+     /* explanation below */
+    margin: 5px;
+    background-color: #333;
+    color: #FFF;
+    font-size: 12px;
+
+    
+
+}

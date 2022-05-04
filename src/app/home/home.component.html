@@ -1,0 +1,9 @@
+<div class="flex-container space-even">
+    <app-category-card
+    *ngFor="let card of cards"
+    [route]="card.route"
+    [params]="card.params"
+    [title]="card.displayname" 
+    [content]="card.content" 
+    [url]="card.url"></app-category-card>
+</div>
