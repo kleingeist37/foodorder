@@ -34,4 +34,11 @@ export class Data {
         new FoodItem('Cäsar Salat', 110, 7.00, ['Salat', 'Cäsardressing', 'Hähnchen', 'Croutons']),
         new FoodItem('Tomatensalat', 120, 9.00, ['Tomaten', 'Mozzarella']),
     ]
+
+    static Pictures: {cat:string, url:string}[] = [
+        {cat:'salad', url: 'https://opasouvlaki.ca/opawp/wp-content/uploads/2017/09/greek-salad-banner.png'},
+        {cat:'pizza', url: 'https://previews.123rf.com/images/shlyahovayulia/shlyahovayulia2006/shlyahovayulia200600090/148968238-horizontales-banner-f%C3%BCr-die-website-flyer-f%C3%BCr-men%C3%BCrestaurant-mit-verschiedenen-pizzasorten-flaches-v.jpg'},
+        {cat:'pasta', url: 'https://previews.123rf.com/images/timolina/timolina2104/timolina210400126/168174291-spaghetti-alla-amatriciana-with-guanciale-tomatoes-and-pecorino-cheese-italian-healthy-food-.jpg'},
+        {cat:'starter', url: 'https://previews.123rf.com/images/vasiliybudarin/vasiliybudarin1807/vasiliybudarin180700171/105454118-bruschetta-with-tomatoes-mozzarella-cheese-and-basil-on-a-old-rustic-table-traditional-italian-appet.jpg'}
+    ];
 }

@@ -1,6 +1,6 @@
 mat-card {
-    border: 1px solid black;
     margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 mat-card-subtitle {
@@ -19,8 +19,6 @@ mat-chip {
     margin: 5px;
     background-color: #333;
     color: #FFF;
-    font-size: 12px;
-
-    
+    font-size: 12px;   
 
 }

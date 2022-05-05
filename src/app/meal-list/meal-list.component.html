@@ -1,2 +1,8 @@
+<div class="jumbo">
+    <div class="jumbo-title">{{title[0] | uppercase}}{{title.slice(1) | lowercase}}</div>
+    <img class="jumbo-pic"
+    [src]="url">
+</div>
+<hr>
 <app-food-item
 *ngFor="let item of itemList" [properties]="item"></app-food-item>

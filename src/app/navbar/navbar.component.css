@@ -1,9 +1,15 @@
 nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    background: lightblue;
+    align-items: center;
+    background: white;
     min-height: 35px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 10;
 }
 
 nav ul {

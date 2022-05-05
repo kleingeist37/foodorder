@@ -12,6 +12,8 @@ import { NavigationService } from '../shared/services/navigation.service';
 })
 export class MealListComponent implements OnInit, OnDestroy {
   itemList: FoodItem[] = [];
+  title: string;
+  url: string
   subscription: Subscription;
   constructor(private route: ActivatedRoute) { }
 
@@ -30,10 +32,13 @@ export class MealListComponent implements OnInit, OnDestroy {
   }
 
   private loadItems(cat: string){
+    this.title = cat;
+    this.url = Data.Pictures.find(x => x.cat === cat).url;
     switch(cat){
         default:
         case 'pizza':
           this.itemList = Data.Pizza;
+          
           break;
 
         case 'salad':
