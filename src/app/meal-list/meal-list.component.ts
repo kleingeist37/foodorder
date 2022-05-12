@@ -3,7 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { FoodItem } from '../shared/classes/food-item.class';
 import { Data } from '../shared/data/data.class';
-import { NavigationService } from '../shared/services/navigation.service';
+import { HttpClientService } from '../shared/services/http-client.service';
+
 
 @Component({
   selector: 'app-meal-list',
@@ -13,15 +14,16 @@ import { NavigationService } from '../shared/services/navigation.service';
 export class MealListComponent implements OnInit, OnDestroy {
   itemList: FoodItem[] = [];
   title: string;
-  url: string
+  url: string;
   subscription: Subscription;
-  constructor(private route: ActivatedRoute) { }
+  foodListSub: Subscription
+  constructor(private route: ActivatedRoute, private httpClient: HttpClientService) { }
 
 
   ngOnInit(): void {
-    this.itemList = Data.Pizza;
-
-    this.loadItems(this.route.snapshot.queryParams['cat']);
+    //Data.Pizza;
+    //this.httpClient.pushData(this.itemList, this.route.snapshot.queryParams['cat']);
+    //this.loadItems(this.route.snapshot.queryParams['cat']);
 
     this.subscription = this.route.queryParams.subscribe( 
       (params: Params) => this.loadItems(params['cat'])      
@@ -29,21 +31,30 @@ export class MealListComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+    this.foodListSub.unsubscribe();
   }
 
+
+
   private loadItems(cat: string){
+    this.foodListSub =  this.httpClient
+                            .getData(cat)
+                            .subscribe((response: FoodItem[]) => {
+                              this.itemList = response;
+                            }); 
+
     this.title = cat;
     this.url = Data.Pictures.find(x => x.cat === cat).url;
-    switch(cat){
-        default:
-        case 'pizza':
-          this.itemList = Data.Pizza;
+    // switch(cat){
+    //     default:
+    //     case 'pizza':
+    //       this.itemList = Data.Pizza;
           
-          break;
+    //       break;
 
-        case 'salad':
-          this.itemList = Data.Salad;
-    }
+    //     case 'salad':
+    //       this.itemList = Data.Salad;
+    // }
   }
 
 }

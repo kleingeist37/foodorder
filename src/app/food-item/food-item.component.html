@@ -1,36 +1,23 @@
-<mat-card class="flex-container flex-row" >
-    <mat-grid-list cols="5" rowHeight="25px">
-        <mat-grid-tile colspan="1">
-            <mat-card-subtitle>Nummer</mat-card-subtitle>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1">
-            <mat-card-subtitle>Name</mat-card-subtitle>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="2">
-            <mat-card-subtitle>Zutaten</mat-card-subtitle>
-        </mat-grid-tile>
-        <mat-grid-tile colspan=" 1">
-            <mat-card-subtitle>Preis</mat-card-subtitle>
-        </mat-grid-tile>
-    </mat-grid-list>
-    <hr>
-
-    <mat-grid-list cols="5" rowHeight="75">
-        <mat-grid-tile colspan="1">
-            <mat-card-title>{{properties.number}}</mat-card-title>
-        </mat-grid-tile>
-        <mat-card-content>
-            <mat-grid-tile colspan="1">
-                {{properties.displayname}}
-            </mat-grid-tile>
-            <mat-grid-tile colspan="2">
-                <mat-chip-list>
-                    <mat-chip *ngFor="let ingri of properties.ingredients">{{ingri}}</mat-chip>
-                </mat-chip-list>
-            </mat-grid-tile>
-            <mat-grid-tile colspan="1">
-                {{properties.price}} €
-            </mat-grid-tile>
-        </mat-card-content>
+<mat-card class="flex-container flex-row food-item ">
+    <mat-grid-list [cols]='maxCols' rowHeight="115px">
+        <!-- <mat-grid-tile colspan="1" *ngFor="let key of keys">
+            <section class="tile-container">
+                <section class="tile-header">{{key}}</section>
+                <section class="tile-body">{{item[key]}}</section>
+            </section>
+        </mat-grid-tile>    -->
+        <mat-grid-tile [colspan]="prop.span" *ngFor="let prop of namedPropList">
+            <section class="tile-container">
+                <section class="tile-header">{{prop.header}}</section>
+                <section *ngIf="!arrayCheck(prop.value); else arrayObj" class="tile-body">{{prop.value}}</section>  
+                <ng-template #arrayObj>
+                    <section class="tile-body">
+                        <mat-chip-list class="chip-list">
+                            <mat-chip class="chip-item" *ngFor="let obj of prop.value">{{obj}}</mat-chip>
+                        </mat-chip-list>                        
+                    </section>    
+                </ng-template>
+            </section>
+        </mat-grid-tile>   
     </mat-grid-list>
 </mat-card>

@@ -3,6 +3,5 @@
     <img class="jumbo-pic"
     [src]="url">
 </div>
-<hr>
-<app-food-item
-*ngFor="let item of itemList" [properties]="item"></app-food-item>
+<mat-divider></mat-divider> 
+<app-food-item *ngFor="let item of itemList" [item]="item"></app-food-item>

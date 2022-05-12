@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,20 +10,29 @@ import { MealListComponent } from './meal-list/meal-list.component';
 import { FoodItemComponent } from './food-item/food-item.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryCardComponent } from './home/category-card/category-card.component';
+import { OrderMenuComponent } from './order-menu/order-menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    MealListComponent,
+    CategoryCardComponent,
     FoodItemComponent,
     HomeComponent,
-    CategoryCardComponent
+    MealListComponent,
+    NavbarComponent,
+    OrderMenuComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MaterialModule,
+    
+
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

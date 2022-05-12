@@ -1,0 +1,14 @@
+<form [formGroup]="foordOrderForm">
+    <mat-form-field *ngFor="let field of formFields"     
+    [class]="field.classes" 
+    [appearance]="field.appeareance">
+    <mat-label>{{field.label}}</mat-label>
+    <input 
+        matInput
+        [placeholder]="field.placeholder"
+        [formControlName]="field.controlName">
+    </mat-form-field>
+</form>
+
+
+

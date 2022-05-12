@@ -1,4 +1,4 @@
-nav {
+.nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -12,17 +12,17 @@ nav {
     z-index: 10;
 }
 
-nav ul {
-    display: inline; 
-    list-style-type: none;
+.nav-item {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
 }
 
-nav div {
-    cursor: pointer;
-    font-size: large;
+.nav-item:hover {
+    background-color: rgb(11, 149, 196);
 }
 
 .active {
-    background-color: yellow;
+    background-color: lightblue;
     font-weight: bold;
 }

@@ -5,7 +5,7 @@ export class FoodItem extends Base {
     ingredients: string[];
     price: number;
 
-    constructor(displayname: string, number: number, price: number, ingredients: string[]){
+    constructor(displayname: string, number: number, ingredients: string[], price: number){
         super();
         this.displayname = displayname;
         this.number = number;
